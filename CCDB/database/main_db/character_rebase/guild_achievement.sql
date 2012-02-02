@@ -15,7 +15,7 @@ CREATE TABLE `guild_achievement` (
   `achievement` smallint(10) unsigned NOT NULL,
   `date` int(20) unsigned DEFAULT NULL,
   PRIMARY KEY (`guildid`,`achievement`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `guild_achievement` WRITE;
 /*!40000 ALTER TABLE `guild_achievement` DISABLE KEYS */;

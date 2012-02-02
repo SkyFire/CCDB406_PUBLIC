@@ -19,7 +19,7 @@ CREATE TABLE `creature_loot_template` (
   `mincountOrRef` mediumint(9) NOT NULL DEFAULT '1',
   `maxcount` tinyint(3) unsigned NOT NULL DEFAULT '1',
   PRIMARY KEY (`entry`,`item`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Loot System';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='Loot System';
 
 LOCK TABLES `creature_loot_template` WRITE;
 /*!40000 ALTER TABLE `creature_loot_template` DISABLE KEYS */;

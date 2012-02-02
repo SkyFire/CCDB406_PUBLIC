@@ -20,7 +20,7 @@ CREATE TABLE `version` (
 
 LOCK TABLES `version` WRITE;
 /*!40000 ALTER TABLE `version` DISABLE KEYS */;
-INSERT INTO `version` VALUES ('Ultracore rev. 2011-12-12 22:22:32 -0700 (b6109f396437) (Win 64, Release)','b6109f396437','CCDB R17 01-20-2012','patch AI 406.01.20',0),('SkyFireEMU rev. 2011-11-10 21:13:45 -0600 (9b06c42327c9+) (Win32, Release)','9b06c42327c9+','CCDB R17 01-17-2012','\"patch\" SmartAI Lab 420.03',0);
+INSERT INTO `version` VALUES ('Ultracore rev. 2011-12-12 22:22:32 -0700 (b6109f396437) (Win 64, Release)','b6109f396437','CCDB R18 02-02-2012','patch AI 406.01.20',0),('SkyFire rev. 2011-12-12 22:22:32 -0700 (b6109f396437) (Win 64, Release)','b6109f396437','CCDB R18 02-02-2012','\"patch\" SmartAI Lab 420.03',0);
 /*!40000 ALTER TABLE `version` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

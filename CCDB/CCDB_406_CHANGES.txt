@@ -1,3 +1,94 @@
+A listing of fixes applied to R18 of CCDB_406 02/02/12 - PUBLIC
+
+-- Vashj'ir fixes --
+-Creatures, Loot and Movements:
+[NPC] Anemone Frenzy
+[NPC] Ravenous Oceanic Broadhead
+[NPC] Redgill Scavenger
+[NPC] Enslaved Alliance Pearl Miner
+[NPC] Deepseeker Crab <Idra'kess Harpooner's Pet>
+[NPC] Enslaved Alliance Mage
+[NPC] Enslaved Horde Pearl Miner
+[NPC] Idra'kess Harpooner
+[NPC] Nespirah Fluid
+[NPC] Idra'kess Prophet
+
+-- The Lost Isle Fixes --
+-Creatures, Loot and Movements
+[NPC] Ancient Island Turtle
+[NPC] Goblin Survivor
+[NPC] Daggertooth Shark
+[NPC] Crab
+[NPC] Island Turtle
+[NPC] Frog
+[NPC] Megs Dreadshredder <Marketing Rep>
+[NPC] Sassy Hardwrench <Your Former Executive Assistant>
+[NPC] Coach Crosscheck <The Bilgewater Buccaneers>
+[NPC] Fizz Lighter <Mage Trainer>
+[NPC] Bamm Megabomb <Hunter Trainer>
+[NPC] Trade Prince Gallywix <Leader of the Bilgewater Cartel>
+[NPC] Ace
+[NPC] Brett "Coins" McQuid <Recovered Supplies>
+[NPC] Candy Cane
+[NPC] Chip Endale
+[NPC] Maxx Avalanche <Shaman Trainer>
+[NPC] Gobber
+[NPC] Grimy Greasefingers <Innkeeper>
+[NPC] Evol Fingers <Warlock Trainer>
+[NPC] Jungle Cat
+[NPC] Bomb-Throwing Monkey
+[NPC] Jumping Monkey
+[NPC] Dead Orc Scout
+[NPC] Pygmy Witchdoctor
+[NPC] Poison Spitter
+[NPC] Frightened Miner
+[NPC] Foreman Dampwick
+[NPC] Freezya
+
+- Quests
+[Q] Bilgewater Cartel Represent
+[Q] Irresistible Pool Pony
+[Q] Surrender or Else!
+[Q] Get Back to Town
+[Q] Get Our Stuff Back!
+[Q] The Enemy of My Enemy
+[Q] Help Wanted
+[Q] Zombies vs. Super Booster Rocket Boots
+[Q] Rocket Boot Boost
+[Q] The Ultimate Footbomb Uniform
+[Q] Monkey Business
+[Q] It's Our Problem Now
+[Q] Orcs Can Write?
+[Q] Miner Troubles
+[Q] Capturing the Unknown
+
+- Other Fixes
+[NPC] Vacillating voidcaller now attackable
+[NPC] Vyral the Vile <Twilight's Hammer>
+[NPC] Twilight Overlord
+[Q] Burning Blade Medallion
+[NPC] Felstalker
+[I] Pockmarked Cloth Bracers
+[GO] Silverbound Treasure Chest
+[NPC] Shardtooth Mauler 
+[Q] Maul 'Em With Kindness
+[NPC] Gormashh the Glutinous
+[NPC] John Shelby
+[NPC] Night Watch Guard
+[Q] Falcon Watch
+[NPC] Maiden of Virtue
+[NPC] Deatholme Necromancer
+[NPC] Twilight Keeper Havunth
+[Q] The Battle Plans
+[Q] Woodpaw Investigation
+[GOSSIPS] Barley
+Heroic Loot Fixes
++ Over 9000 aditional fixes/adjustments for Creature Loot Fixes, SAI Fixes, Waypoints, Factions, Vendor Items and Items
+
+Many Thanks to Zamara, Nomad, Raydeon and Sulbutx and Members of Skyfire for their work towards this revision.
+
+-----------------------------------------------------------------------
+
 A listing of fixes applied to R17 of CCDB_406 20/01/12 - PUBLIC
 
 -- Vashj'ir fixes --

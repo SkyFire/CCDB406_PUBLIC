@@ -15,7 +15,7 @@ CREATE TABLE `character_branchspec` (
   `spec` int(11) unsigned NOT NULL DEFAULT '0',
   `branchSpec` int(11) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`guid`,`spec`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 LOCK TABLES `character_branchspec` WRITE;
 /*!40000 ALTER TABLE `character_branchspec` DISABLE KEYS */;

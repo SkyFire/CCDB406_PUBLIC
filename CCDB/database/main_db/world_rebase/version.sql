@@ -20,7 +20,7 @@ CREATE TABLE `version` (
 
 LOCK TABLES `version` WRITE;
 /*!40000 ALTER TABLE `version` DISABLE KEYS */;
-INSERT INTO `version` VALUES ('SkyFireEMU rev. 0000-00-00 00:00:00 +0000 (Archived) (Win64, Release)','Archived','CCDB R17 01-20-2012','\"patch\" SmartAI Lab 420.03',0);
+INSERT INTO `version` VALUES('SkyFireEMU rev. 0000-00-00 00:00:00 +0000 (Archived) (Win32, Release)','Archived','CCDB R18 02-02-2012','\"patch\" SmartAI Lab 420.03',0);
 /*!40000 ALTER TABLE `version` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

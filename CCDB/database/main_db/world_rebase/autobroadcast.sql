@@ -18,7 +18,7 @@ CREATE TABLE `autobroadcast` (
 
 LOCK TABLES `autobroadcast` WRITE;
 /*!40000 ALTER TABLE `autobroadcast` DISABLE KEYS */;
-INSERT INTO `autobroadcast` VALUES (1,'Welcome to ViperWow Online Gaming. To join our world chat type:  /join world ');
+INSERT INTO `autobroadcast` VALUES (1,'To join our world chat type:  /join world ');
 /*!40000 ALTER TABLE `autobroadcast` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

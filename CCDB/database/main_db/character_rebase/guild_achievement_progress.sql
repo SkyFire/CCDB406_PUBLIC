@@ -16,7 +16,7 @@ CREATE TABLE `guild_achievement_progress` (
   `counter` int(10) unsigned NOT NULL,
   `date` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`guildid`,`criteria`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `guild_achievement_progress` WRITE;
 /*!40000 ALTER TABLE `guild_achievement_progress` DISABLE KEYS */;

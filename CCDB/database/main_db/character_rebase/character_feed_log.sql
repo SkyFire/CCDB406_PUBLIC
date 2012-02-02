@@ -19,7 +19,7 @@ CREATE TABLE `character_feed_log` (
   `difficulty` smallint(6) DEFAULT '-1',
   `item_guid` int(11) NOT NULL,
   `item_quality` smallint(6) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 LOCK TABLES `character_feed_log` WRITE;
 /*!40000 ALTER TABLE `character_feed_log` DISABLE KEYS */;

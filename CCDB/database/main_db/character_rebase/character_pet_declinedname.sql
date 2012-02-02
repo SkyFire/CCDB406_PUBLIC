@@ -19,7 +19,7 @@ CREATE TABLE `character_pet_declinedname` (
   `instrumental` varchar(12) NOT NULL DEFAULT '',
   `prepositional` varchar(12) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
-  KEY `owner_key` (`owner`)
+  KEY `owner_key` (`owner`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `character_pet_declinedname` WRITE;

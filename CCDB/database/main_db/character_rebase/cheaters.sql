@@ -28,7 +28,7 @@ CREATE TABLE `cheaters` (
   PRIMARY KEY (`entry`),
   KEY `idx_Count` (`count`) USING BTREE,
   KEY `idx_Player` (`player`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 LOCK TABLES `cheaters` WRITE;
 /*!40000 ALTER TABLE `cheaters` DISABLE KEYS */;
