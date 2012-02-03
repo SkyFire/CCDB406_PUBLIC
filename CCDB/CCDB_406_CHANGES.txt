@@ -1,4 +1,4 @@
-A listing of fixes applied to R18 of CCDB_406 02/02/12 - PUBLIC
+A listing of fixes applied to R18-b of CCDB_406 03/02/12 - PUBLIC
 
 -- Vashj'ir fixes --
 -Creatures, Loot and Movements:
@@ -87,6 +87,9 @@ Heroic Loot Fixes
 
 Many Thanks to Zamara, Nomad, Raydeon and Sulbutx and Members of Skyfire for their work towards this revision.
 
+
+Update section in the DB installer now active.  Updates from SKYFIRE are
+included up to "2012_02_03_00_world_creature_text.sql".
 -----------------------------------------------------------------------
 
 A listing of fixes applied to R17 of CCDB_406 20/01/12 - PUBLIC

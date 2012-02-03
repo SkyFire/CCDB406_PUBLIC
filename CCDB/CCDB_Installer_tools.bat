@@ -3,9 +3,9 @@ TITLE Catacrunch DB Project DB Installer Tool
 COLOR 0b
 SET Pbuild_ver= G5 12-13-11
 SET Sbuild_ver= 12-31-11
-SET SRbuild_ver= 01-12-12
-SET updatetime= Jan 24,2012 20:14pm
-SET dbrev= CCDB R17a
+SET SRbuild_ver= 01-25-12
+SET updatetime= Feb 03,2012 19:30pm
+SET dbrev= CCDB R18
 SET release_ver= PUBLIC
 :TOP
 
@@ -24,7 +24,7 @@ ECHO                                2011-2012
 echo                        http://www.ccdb-home.org
 ECHO         DB Version:%dbrev% : Updated on%updatetime% 
 ECHO.
-ECHO                          CCDB%release_ver% RELEASE
+ECHO                           CCDB%release_ver% RELEASE
 ECHO     ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
 ECHO     บ                   CCDB Installation Tool                    บ
 ECHO     บ                            for                              บ
@@ -64,19 +64,18 @@ SET mysqlpath=.\database\dep\mysql\
 SET devcsql=.\database\main_db\character\
 SET devsql=.\database\main_db\world\
 SET procsql=.\database\main_db\procs\
-SET changsql=.\database\development\core_updates
-SET update_pack=.\database\development\update_pack
-SET dev_pack=.\database\development\dev_pack
-SET community_pack .\development\community_packs
+SET orig_update=.\database\development\orig_update
+SET reba_update=.\database\development\reba_update
 SET local_sp=.\database\development\locals\spanish\
 SET local_gr=.\database\development\locals\german\
 SET local_ru=.\database\development\locals\russian\
 SET local_it=.\database\development\locals\italian\
 SET rebchar=.\database\main_db\character_rebase\
 SET rebworl=.\database\main_db\world_rebase\
+
 :Begin
 CLS
-SET upstat=No Updates
+SET upstat= Rev21-b
 Set lstat=Under Development
 COLOR 0b
 SET v=""
@@ -87,7 +86,7 @@ ECHO          บ        Please Choose an option                 บ
 ECHO          บ                                                บ
 ECHO          บ  C. Goto Original CCDB Installation Options    บ
 ECHO          บ                                                บ
-ECHO          บ  S. Goto Skyfire CCDB Installation Options      บ
+ECHO          บ  S. Goto Skyfire CCDB Installation Options     บ
 ECHO          บ                                                บ
 ECHO          บ  X  Exit Install tool                          บ
 ECHO          บ                                                บ
@@ -98,6 +97,8 @@ IF %v%==c GOTO CCDBORI
 IF %v%==C GOTO CCDBORI
 IF %v%==s GOTO SKYREBASE
 IF %v%==S GOTO SKYREBASE
+IF %v%==d GOTO CCDBDEV
+IF %v%==D GOTO CCDBDEV
 IF %v%==x GOTO exit
 IF %v%==X GOTO exit
 IF %v%=="" GOTO exit
@@ -115,7 +116,7 @@ ECHO          บ                                                บ
 ECHO          บ  3. Backup World DB                            บ
 ECHO          บ  4. Backup Character DB                        บ
 ECHO          บ                                                บ
-ECHO          บ  5. Apply Updates             %upstat%       บ
+ECHO          บ  5. Apply Updates             %upstat%         บ
 ECHO          บ  6. Apply Locals            %lstat%  บ
 ECHO          บ  7. Change Settings                            บ
 ECHO          บ                                                บ
@@ -148,12 +149,14 @@ ECHO          ษออออออออออออออออออออออออออออออออออออออออออออออออป
 ECHO          บ                                                บ
 ECHO          บ      Please Choose an option for your DB       บ
 ECHO          บ                                                บ
-ECHO          บ  9. Install REBASE DB                          บ
+ECHO          บ  1. Install REBASE DB                          บ
 ECHO          บ     Note: This will wipe old DB!               บ
-ECHO          บ  0. Install clean REBASE Char DB               บ
+ECHO          บ  2. Install clean REBASE Char DB               บ
 ECHO          บ                                                บ
-ECHO          บ  A. Backup REBASE WORLD DB                     บ
-ECHO          บ  B. Backup REBASE Character DB                 บ
+ECHO          บ  3. Backup REBASE WORLD DB                     บ
+ECHO          บ  4. Backup REBASE Character DB                 บ
+ECHO          บ                                                บ
+ECHO          บ  5. Apply Updates             %upstat%         บ
 ECHO          บ                                                บ
 ECHO          บ  7. Change Settings                            บ
 ECHO          บ                                                บ
@@ -165,17 +168,16 @@ ECHO          ศออออออออออออออออออออออออออออออออออออออออออออออออผ
 ECHO.
 
 SET /p v= 		Enter a char: 
-IF %v%==9 GOTO import_rworld
-IF %v%==0 GOTO import_rchar
+IF %v%==1 GOTO import_rworld
+IF %v%==2 GOTO import_rchar
 IF %v%==M GOTO begin
 IF %v%==m GOTO begin
 IF %v%==7 GOTO top
 
-IF %v%==a GOTO dump_rworld
-IF %v%==A GOTO dump_rworld
+IF %v%==3 GOTO dump_rworld
+IF %v%==4 GOTO dump_rchar
+IF %v%==5 GOTO updates
 
-IF %v%==b GOTO dump_rchar
-IF %v%==B GOTO dump_rchar
 
 IF %v%==x GOTO exit
 IF %v%==X GOTO exit
@@ -252,11 +254,6 @@ ECHO.
 ECHO.
 PAUSE
 GOTO Begin
-
-
-
-
-
 
 :dump_world
 CLS
@@ -398,22 +395,20 @@ ECHO Done.
 PAUSE
 GOTO begin
 
-:Updates
+:updates
 CLS
 ECHO.
 ECHO.   
 ECHO.
 ECHO          ษออออออออออออออออออออออออออออออออออออออออออออออออป
 ECHO          บ                                                บ
+ECHO          บ                CCDB UPDATES                    บ
+ECHO          บ                                                บ
 ECHO          บ      Please select your Choice                 บ
 ECHO          บ                                                บ
-ECHO          บ     1.          Core Updates                   บ
+ECHO          บ     1.          CCDB Original Updates          บ
 ECHO          บ                                                บ
-ECHO          บ     2.          Dev Hot Fixes                  บ
-ECHO          บ                                                บ
-ECHO          บ     3.          Community Fixes                บ
-ECHO          บ                                                บ
-ECHO          บ     4.          DB UpdatePack                  บ
+ECHO          บ     2.          CCDB Rebase Updates            บ
 ECHO          บ                                                บ
 ECHO          บ     5.          Main Menu                      บ
 ECHO          บ                                                บ
@@ -422,63 +417,35 @@ ECHO.
 ECHO.
 set /p ch=      Number: 
 ECHO.
-IF %ch%==1 GOTO core_update
-IF %ch%==2 GOTO dev_fix
-IF %ch%==3 GOTO com_fix
-IF %ch%==4 GOTO Up_pack
+IF %ch%==1 GOTO orig_update
+IF %ch%==2 GOTO reba_update
 IF %ch%==5 GOTO begin
 IF %ch%=="" GOTO Updates
 GOTO error
 
 
-:core_update
+:orig_update
 CLS
 ECHO.
-ECHO import: Core Changesets
-for %%C in (%changsql%\*.sql) do (
+ECHO import: CCDB Original DB updates... 
+for %%C in (%orig_update%\*.sql) do (
 	ECHO import: %%~nxC
 	%mysqlpath%\mysql --host=%host% --user=%user% --password=%pass% --port=%port% %world_db% < "%%~fC"
 )
-ECHO Changesets imported sucesfully!
+ECHO Your CCDB Original DB has been updated...
 ECHO.
 PAUSE   
 GOTO begin
 
-:dev_fix
+:reba_update
 CLS
 ECHO.
-ECHO import: Developer Hotfixes
-for %%C in (%dev_pack%\*.sql) do (
+ECHO import: CCDB Rebase DB updates...
+for %%C in (%reba_update%\*.sql) do (
 	ECHO import: %%~nxC
 	%mysqlpath%\mysql --host=%host% --user=%user% --password=%pass% --port=%port% %world_db% < "%%~fC"
 )
-ECHO Hotfixes imported sucesfully!
-ECHO.
-PAUSE   
-GOTO begin
-
-:com_fix
-CLS
-ECHO.
-ECHO import: community fixes
-for %%C in (%com_pack%\*.sql) do (
-	ECHO import: %%~nxC
-	%mysqlpath%\mysql --host=%host% --user=%user% --password=%pass% --port=%port% %world_db% < "%%~fC"
-)
-ECHO Community fixes imported sucesfully!
-ECHO.
-PAUSE   
-GOTO begin
-
-:up_pack
-CLS
-ECHO.
-ECHO import: update pack
-for %%C in (%update_pack%\*.sql) do (
-	ECHO import: %%~nxC
-	%mysqlpath%\mysql --host=%host% --user=%user% --password=%pass% --port=%port% %world_db% < "%%~fC"
-)
-ECHO Update Pack imported sucesfully!
+ECHO Your CCDB Rebase DB has been updated...
 ECHO.
 PAUSE   
 GOTO begin
@@ -601,5 +568,6 @@ endlocal
 ECHO  Finished ... %char_db% exported to %cdumppath% folder...
 PAUSE
 GOTO begin
+
 
 :exit
