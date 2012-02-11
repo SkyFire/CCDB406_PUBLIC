@@ -202,11 +202,7 @@ INSERT  INTO `spelldifficulty_dbc` VALUES (6025,67103,67103,67104,67105);
 UNLOCK TABLES; 
 
 
--- __________________CATACRUNCH_DB_PROJECT_______________
--- ______________________WOW_CATA_406+____________________
-ALTER TABLE `spell_dbc` ADD COLUMN `AttributesEx6` INT UNSIGNED NOT NULL DEFAULT '0' AFTER `AttributesEx5`;
-ALTER TABLE `spell_dbc` ADD COLUMN `AttributesEx7` INT UNSIGNED NOT NULL DEFAULT '0' AFTER `AttributesEx6`;
-ALTER TABLE `spell_dbc` ADD COLUMN `AttributesEx8` INT UNSIGNED NOT NULL DEFAULT '0' AFTER `AttributesEx7`; 
+
 
 
 -- __________________CATACRUNCH_DB_PROJECT_______________
@@ -3486,7 +3482,7 @@ INSERT INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `Exte
 UPDATE quest_template SET RewItemId1 = 0 WHERE RewItemId1 = 41596;
 
 -- chogall entrance door, thanks to arkdb
-INSERT INTO `gameobject_template` VALUES (205228, 0, 9696, 'Cho\'gall Entrance', '', '', '', 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', 1);
+REPLACE INTO `gameobject_template` VALUES (205228, 0, 9696, 'Cho\'gall Entrance', '', '', '', 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', 1);
 
 -- removes 4.2 item# 71721 from vendors
 DELETE FROM npc_vendor WHERE item = 71721;
@@ -3769,10 +3765,7 @@ INSERT INTO `creature_template` (`entry`, `difficulty_entry_1`, `difficulty_entr
 
  
  
--- __________________CATACRUNCH_DB_PROJECT_______________
--- ______________________WOW_CATA_406+____________________
-UPDATE `conditions` SET `SourceTypeOrReferenceId`=17 WHERE `SourceTypeOrReferenceId`=13 AND `SourceEntry`=47305 AND `ConditionTypeOrReference`=20;
-DELETE FROM conditions WHERE SourceTypeOrReferenceId=13 AND SourceEntry=47305; 
+
  
 -- __________________CATACRUNCH_DB_PROJECT_______________
 -- ______________________WOW_CATA_406+____________________
@@ -3855,7 +3848,8 @@ INSERT INTO `item_loot_template` (`entry`,`item`,`ChanceOrQuestChance`,`lootmode
 (37586,33226,100,1,0,2,3), -- Tricky Treat
 (37586,1,100,1,0,-@Ref,1); -- Referenced Specials
  
- 
+ ALTER TABLE `conditions` ADD COLUMN `SourceId` INT(10) UNSIGNED NOT NULL DEFAULT '0' AFTER SourceEntry;
+
 -- __________________CATACRUNCH_DB_PROJECT_______________
 -- ______________________WOW_CATA_406+____________________
 -- XXXXXXXXXXXXXXXXXXXXX
@@ -6077,7 +6071,7 @@ INSERT INTO `npc_text` (`ID`,`prob0`,`text0_0`,`text0_1`,`lang0`,`em0_0`,`em0_1`
 -- __________________CATACRUNCH_DB_PROJECT_______________
 -- ______________________WOW_CATA_406+____________________
 -- Missing Love is in the Air NPCs
-SET @GUID := 40481; -- need 8
+SET @GUID := 288888; -- need 8
 
 DELETE FROM `creature` WHERE `guid` BETWEEN @GUID AND @GUID+7 AND `id` IN (37887,38039,38040,38066,38325,38293);
 INSERT INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`,`npcflag`,`unit_flags`,`dynamicflags`) VALUES
@@ -6090,8 +6084,8 @@ INSERT INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equ
 (@GUID+6,38293,0,1,1,0,0,-4932.9,-995.348,501.441,0.7201,300,0,0,42,0,0,2,0,8), -- Junior Inspector
 (@GUID+7,38293,1,1,1,0,0,9885.37,2494.31,1315.92,3.01351,300,0,0,42,0,0,2,0,8); -- Junior Inspector
 
-DELETE FROM `game_event_creature` WHERE `eventEntry`=8 AND `guid` BETWEEN @GUID AND @GUID+7;
-INSERT INTO `game_event_creature` (`guid`,`eventEntry`) VALUES
+DELETE FROM `game_event_creature` WHERE `event`=8 AND `guid` BETWEEN @GUID AND @GUID+7;
+INSERT INTO `game_event_creature` (`guid`,`event`) VALUES
 (@GUID+0,8),
 (@GUID+1,8),
 (@GUID+2,8),
@@ -6160,8 +6154,8 @@ INSERT INTO `waypoint_data` (`id`,`point`,`position_x`,`position_y`,`position_z`
  
 -- __________________CATACRUNCH_DB_PROJECT_______________
 -- ______________________WOW_CATA_406+____________________
-UPDATE `game_event` SET `start_time`= '2012-02-05 00:01:00', `holiday`=423 WHERE `eventEntry`=8; -- Love is in the Air (Aokromes)
-UPDATE `game_event` SET `length`=20160 WHERE `eventEntry`=8; -- Love is in the Air (furion)
+UPDATE `game_event` SET `start_time`= '2012-02-05 00:01:00', `holiday`=423 WHERE `entry`=8; -- Love is in the Air (Aokromes)
+UPDATE `game_event` SET `length`=20160 WHERE `entry`=8; -- Love is in the Air (furion)
  
  
 -- __________________CATACRUNCH_DB_PROJECT_______________
@@ -6192,7 +6186,7 @@ INSERT INTO `achievement_criteria_data` (`criteria_id`, `type`, `value1`, `value
 (5787, 6, 4395, 0, ''), -- Lonely? - Dalaran
 (4071, 6, 4395, 0, ''); -- Lonely? - Dalaran
 
-UPDATE `achievement_criteria_data` SET `value1`=423 WHERE `value1`=355 AND `type`=16
+UPDATE `achievement_criteria_data` SET `value1`=423 WHERE `value1`=355 AND `type`=16;
  
  
 -- __________________CATACRUNCH_DB_PROJECT_______________
@@ -6220,7 +6214,7 @@ CREATE TABLE IF NOT EXISTS `fishing_loot_template` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='Loot System';
 
 
-INSERT INTO `fishing_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `lootmode`, `groupid`, `mincountOrRef`, `maxcount`) VALUES
+REPLACE INTO `fishing_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `lootmode`, `groupid`, `mincountOrRef`, `maxcount`) VALUES
 (1519, 6289, 56.4507, 1, 1, 1, 1),
 (1519, 58503, 24.6427, 1, 1, 1, 1),
 (1519, 6308, 20.477, 1, 1, 1, 1),
@@ -7681,7 +7675,7 @@ INSERT INTO `fishing_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `lo
 (45, 53071, 0.119929, 1, 1, 1, 1),
 (45, 6309, 0.109794, 1, 1, 1, 1),
 (45, 6311, 0.051519, 1, 1, 1, 1);
-INSERT INTO `fishing_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `lootmode`, `groupid`, `mincountOrRef`, `maxcount`) VALUES
+REPLACE INTO `fishing_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `lootmode`, `groupid`, `mincountOrRef`, `maxcount`) VALUES
 (45, 52326, 0.0498298, 1, 1, 1, 3),
 (45, 6363, 0.0380058, 1, 1, 1, 1),
 (45, 6366, 0.0346275, 1, 1, 1, 1),
@@ -9100,7 +9094,7 @@ INSERT INTO `fishing_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `lo
 (3537, 782, 0.000189889, 1, 1, 1, 1),
 (3537, 6519, 0.000189889, 1, 1, 1, 1),
 (3537, 49751, 0.000189889, 1, 1, 1, 1);
-INSERT INTO `fishing_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `lootmode`, `groupid`, `mincountOrRef`, `maxcount`) VALUES
+REPLACE INTO `fishing_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `lootmode`, `groupid`, `mincountOrRef`, `maxcount`) VALUES
 (3537, 23789, 0.000189889, 1, 1, 1, 1),
 (3537, 58856, 0.000189889, 1, 1, 1, 1),
 (3537, 23759, 0.000189889, 1, 1, 1, 1),
@@ -10503,7 +10497,7 @@ INSERT INTO `fishing_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `lo
 (4709, 8365, 21.3628, 1, 1, 1, 1),
 (4709, 6359, 19.4045, 1, 1, 1, 1),
 (4709, 6358, 16.0589, 1, 1, 1, 1);
-INSERT INTO `fishing_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `lootmode`, `groupid`, `mincountOrRef`, `maxcount`) VALUES
+REPLACE INTO `fishing_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `lootmode`, `groupid`, `mincountOrRef`, `maxcount`) VALUES
 (4709, 6308, 12.0503, 1, 1, 1, 1),
 (4709, 6362, 11.9398, 1, 1, 1, 1),
 (4709, 4603, 4.51811, 1, 1, 1, 1),
@@ -11951,7 +11945,7 @@ INSERT INTO `fishing_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `lo
 (1176, 45198, 1.29032, 1, 1, 1, 1),
 (1176, 45190, 1.20968, 1, 1, 1, 1),
 (1176, 13757, 0.806452, 1, 1, 1, 1);
-INSERT INTO `fishing_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `lootmode`, `groupid`, `mincountOrRef`, `maxcount`) VALUES
+REPLACE INTO `fishing_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `lootmode`, `groupid`, `mincountOrRef`, `maxcount`) VALUES
 (1176, 13886, 0.16129, 1, 1, 1, 1),
 (1176, 9936, 0.0806452, 1, 1, 1, 1),
 (1176, 3928, 0.0806452, 1, 1, 1, 1),

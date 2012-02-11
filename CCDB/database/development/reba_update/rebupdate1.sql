@@ -5462,7 +5462,7 @@ INSERT INTO `npc_text` (`ID`,`prob0`,`text0_0`,`text0_1`,`lang0`,`em0_0`,`em0_1`
 -- __________________CATACRUNCH_DB_PROJECT_______________
 -- ______________________WOW_CATA_406+____________________
 -- Missing Love is in the Air NPCs
-SET @GUID := 40481; -- need 8
+SET @GUID := 288888; -- need 8
 
 DELETE FROM `creature` WHERE `guid` BETWEEN @GUID AND @GUID+7 AND `id` IN (37887,38039,38040,38066,38325,38293);
 INSERT INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`,`npcflag`,`unit_flags`,`dynamicflags`) VALUES
@@ -5542,6 +5542,8 @@ INSERT INTO `waypoint_data` (`id`,`point`,`position_x`,`position_y`,`position_z`
 (@PATH,8,4026.488,7297.103,640.2736,0,0,0,100,0),
 (@PATH,9,4026.488,7297.103,640.2736,0,0,0,100,0);
  
+ ALTER TABLE `conditions` ADD COLUMN `SourceId` INT(10) UNSIGNED NOT NULL DEFAULT '0' AFTER SourceEntry;
+
  
 -- __________________CATACRUNCH_DB_PROJECT_______________
 -- ______________________WOW_CATA_406+____________________
@@ -5577,7 +5579,7 @@ INSERT INTO `achievement_criteria_data` (`criteria_id`, `type`, `value1`, `value
 (5787, 6, 4395, 0, ''), -- Lonely? - Dalaran
 (4071, 6, 4395, 0, ''); -- Lonely? - Dalaran
 
-UPDATE `achievement_criteria_data` SET `value1`=423 WHERE `value1`=355 AND `type`=16
+UPDATE `achievement_criteria_data` SET `value1`=423 WHERE `value1`=355 AND `type`=16;
  
  
 -- __________________CATACRUNCH_DB_PROJECT_______________
@@ -5605,7 +5607,7 @@ CREATE TABLE IF NOT EXISTS `fishing_loot_template` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='Loot System';
 
 
-INSERT INTO `fishing_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `lootmode`, `groupid`, `mincountOrRef`, `maxcount`) VALUES
+REPLACE INTO `fishing_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `lootmode`, `groupid`, `mincountOrRef`, `maxcount`) VALUES
 (1519, 6289, 56.4507, 1, 1, 1, 1),
 (1519, 58503, 24.6427, 1, 1, 1, 1),
 (1519, 6308, 20.477, 1, 1, 1, 1),
@@ -7066,7 +7068,7 @@ INSERT INTO `fishing_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `lo
 (45, 53071, 0.119929, 1, 1, 1, 1),
 (45, 6309, 0.109794, 1, 1, 1, 1),
 (45, 6311, 0.051519, 1, 1, 1, 1);
-INSERT INTO `fishing_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `lootmode`, `groupid`, `mincountOrRef`, `maxcount`) VALUES
+REPLACE INTO `fishing_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `lootmode`, `groupid`, `mincountOrRef`, `maxcount`) VALUES
 (45, 52326, 0.0498298, 1, 1, 1, 3),
 (45, 6363, 0.0380058, 1, 1, 1, 1),
 (45, 6366, 0.0346275, 1, 1, 1, 1),
@@ -8485,7 +8487,7 @@ INSERT INTO `fishing_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `lo
 (3537, 782, 0.000189889, 1, 1, 1, 1),
 (3537, 6519, 0.000189889, 1, 1, 1, 1),
 (3537, 49751, 0.000189889, 1, 1, 1, 1);
-INSERT INTO `fishing_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `lootmode`, `groupid`, `mincountOrRef`, `maxcount`) VALUES
+REPLACE INTO `fishing_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `lootmode`, `groupid`, `mincountOrRef`, `maxcount`) VALUES
 (3537, 23789, 0.000189889, 1, 1, 1, 1),
 (3537, 58856, 0.000189889, 1, 1, 1, 1),
 (3537, 23759, 0.000189889, 1, 1, 1, 1),
@@ -9888,7 +9890,7 @@ INSERT INTO `fishing_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `lo
 (4709, 8365, 21.3628, 1, 1, 1, 1),
 (4709, 6359, 19.4045, 1, 1, 1, 1),
 (4709, 6358, 16.0589, 1, 1, 1, 1);
-INSERT INTO `fishing_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `lootmode`, `groupid`, `mincountOrRef`, `maxcount`) VALUES
+REPLACE INTO `fishing_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `lootmode`, `groupid`, `mincountOrRef`, `maxcount`) VALUES
 (4709, 6308, 12.0503, 1, 1, 1, 1),
 (4709, 6362, 11.9398, 1, 1, 1, 1),
 (4709, 4603, 4.51811, 1, 1, 1, 1),
@@ -11336,7 +11338,7 @@ INSERT INTO `fishing_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `lo
 (1176, 45198, 1.29032, 1, 1, 1, 1),
 (1176, 45190, 1.20968, 1, 1, 1, 1),
 (1176, 13757, 0.806452, 1, 1, 1, 1);
-INSERT INTO `fishing_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `lootmode`, `groupid`, `mincountOrRef`, `maxcount`) VALUES
+REPLACE INTO `fishing_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `lootmode`, `groupid`, `mincountOrRef`, `maxcount`) VALUES
 (1176, 13886, 0.16129, 1, 1, 1, 1),
 (1176, 9936, 0.0806452, 1, 1, 1, 1),
 (1176, 3928, 0.0806452, 1, 1, 1, 1),
