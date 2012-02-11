@@ -16,11 +16,11 @@ CREATE TABLE `version` (
   `db_version` varchar(120) DEFAULT NULL COMMENT 'Version of world DB.',
   `script_version` varchar(120) DEFAULT NULL,
   `cache_id` int(10) DEFAULT '0'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='CTDB and TrinityCore Version Notes';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='TrinityCore Version Notes';
 
 LOCK TABLES `version` WRITE;
 /*!40000 ALTER TABLE `version` DISABLE KEYS */;
-INSERT INTO `version` VALUES('SkyFireEMU rev. 0000-00-00 00:00:00 +0000 (Archived) (Win32, Release)','Archived','CCDB R18 02-02-2012','\"patch\" SmartAI Lab 420.03',0);
+INSERT INTO `version` VALUES ('SKYFIRE REBASE rev. 2012-02-11 22:22:32 (Win 64, Release)','b6109f396437','CCDB R19 Public 11-02-2012','\"patch\" SmartAI Lab 420.03',0);
 /*!40000 ALTER TABLE `version` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

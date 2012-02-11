@@ -1,3 +1,94 @@
+A listing of fixes applied to R19-A of CCDB_406 11/02/12 - PUBLIC
+
+Enchanting Training Fix
+Relikt Fix
+[Q] The Scarlet Harvest
+4.2 Item removal
+[GO] Added Chogall entrance door
+Removal of Dalaran JC Token
+[Q] Burn It Up... For the Horde!
+Aura fix (Rebase only)
+
+-- GAMEOBJECT
+[GO-LOOT] Scarlet Onslaught Daily Orders: Beach
+[GO-LOOT] Stormwind Locker
+[GO-LOOT] Missing Parts
+[GO-LOOT] Glimmerdeep Clam
+[GO-LOOT] Conch Shell
+[GO-LOOT] Sambino's Air Valve
+[GO-LOOT] Horde Survival Package
+[GO-LOOT] Military Helm
+[GO-LOOT] Hobble's Stray Part
+[GO-LOOT] Keg of Gunpowder
+[GO-LOOT] Rusty Harpoon
+[GO-LOOT] Bloated Kelp Bulb
+[GO-LOOT] Alliance Survival Package
+[GO-LOOT] Coil of Kvaldir Rope
+[GO-LOOT] Idra'kess Weapon Rack
+[GO-LOOT] Deepfin Plunder
+[GO-LOOT] Harkor's Brew Keg
+[GO-LOOT] Harvest Nectar
+[GO-LOOT] Harvest Boar
+[GO-LOOT] Krom'zar's Banner
+[GO-LOOT] The Prince's Chest
+[GO-LOOT] Core Fragment
+[GO-LOOT] Harvest Fruit
+[GO-LOOT] Harvest Fish
+[FIX] Fixed DisplayID for GO "War Golem Part"
+200+ gameobject corrections from sniffs
+
+-- NPC's
+[ADD] Vendor items for Neka
+[ADD] Vendor items for Lokarbo
+[ADD] Vendor items for Murhane
+[ADD] Vendor items for Tex Vortacoil
+[ADD] Vendor items for Kadu
+[ADD] Skin loot for Grizzly Bear
+[ADD] Vendor items for Rembar Bellanne
+[ADD] Skin loot for Redridge Fox Cub
+[ADD] Skin loot for Hill Fox
+[ADD] Skin loot for Highlands Fox
+[FIX] Lvl & money fix for Captain Lancy Revshon
+[FIX] Faction & Lvl fix for Kadu
+[FIX] Loot & lvl fix for Stormwind Rat
+[FIX] Faction fix for Iron Thane Furyhammer
+[FIX] Faction, lvl, flag fix for Quartermaster Dernhak
+[FIX] Pickpocket loot fix for Enslaved Bandit
+[FIX] Pickpocket loot fix for Zin'jatar Pearlbinder
+[FIX] Pickpocket loot fix for Riverpaw Basher
+[FIX] Loot for Overseer Idra'kess
+[FIX] Skin Loot for Orca
+[FIX] Skin Loot for Arctic Grizzly
+[FIX] Skin Loot for Vargul Blighthound
+[FIX] issue #0000043 - NPC Vlagga Freyfeather
+[FIX] issue #0000046 - Apothecary Zelana
+70+ creature template corrections from sniffs
+
+-- QUESTS
+[FIX] quest line corrections and text fixes for "Young Lovers"line Elwynn Forest
+[FIX] quest-24976 Variety is the Spice of Death
+[FIX] a number of dwarf start area issues
+[FIX] PrevQuest, NextQuest and End Quest texts for Hyjal
+[removed]Quest 8555 obsolete.
+
+-- LOCALES
+[ADD]  loc2 to core_string table
+
+-- CORE
+[FIX] Core crashfix and some optimizations for quest Evacuate the Merchant Square
+
+-- SKYFIRE (NEW)
+[FIX] db error - wrong spawn mask
+[FIX] db error - creature_addon
+[FIX] db error - creature_template_addon
+
+(these fixes have been added to the DB update feature)
+Skyfire updated added up to "2012_02_11_00_fishing_loot_template.sql"
+
+Thanks to Nomad, Raydeon, John2308, Sulbutx Zamara and the SKYFIRE Team for their help towards this revision
+
+-----------------------------------------------------------------
+
 A listing of fixes applied to R18-b of CCDB_406 03/02/12 - PUBLIC
 
 -- Vashj'ir fixes --

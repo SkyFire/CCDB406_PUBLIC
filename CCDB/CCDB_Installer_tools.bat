@@ -3,9 +3,9 @@ TITLE Catacrunch DB Project DB Installer Tool
 COLOR 0b
 SET Pbuild_ver= G5 12-13-11
 SET Sbuild_ver= 12-31-11
-SET SRbuild_ver= 01-25-12
-SET updatetime= Feb 03,2012 19:30pm
-SET dbrev= CCDB R18
+SET SRbuild_ver= 02-11-12
+SET updatetime= Feb 11,2012 18:47pm
+SET dbrev= CCDB R19
 SET release_ver= PUBLIC
 :TOP
 
@@ -75,7 +75,7 @@ SET rebworl=.\database\main_db\world_rebase\
 
 :Begin
 CLS
-SET upstat= Rev21-b
+SET upstat= Rev19-A
 Set lstat=Under Development
 COLOR 0b
 SET v=""
