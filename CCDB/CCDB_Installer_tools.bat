@@ -3,10 +3,10 @@ TITLE Catacrunch DB Project DB Installer Tool
 COLOR 0b
 SET Pbuild_ver= G5 12-13-11
 SET Sbuild_ver= 12-31-11
-SET SRbuild_ver= 02-11-12
-SET updatetime= Feb 11,2012 18:47pm
+SET SRbuild_ver= 02-17-12
+SET updatetime= Feb 17,2012 18:47pm
 SET dbrev= CCDB R19
-SET release_ver= PUBLIC
+SET release_ver= Official
 :TOP
 
 echo. 
@@ -24,14 +24,14 @@ ECHO                                2011-2012
 echo                        http://www.ccdb-home.org
 ECHO         DB Version:%dbrev% : Updated on%updatetime% 
 ECHO.
-ECHO                           CCDB%release_ver% RELEASE
+ECHO                         CCDB%release_ver% RELEASE
 ECHO     ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
 ECHO     บ                   CCDB Installation Tool                    บ
 ECHO     บ                            for                              บ
 ECHO     บ PDSU%Pbuild_ver%, Skyfire%Sbuild_ver%, Skyfire REBASE%SRbuild_ver% บ
 ECHO     ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
-ECHO Members: Catacrunch : Lorac   : Nomad   : Zamara  : Sulbutx : John2308
-ECHO        : Prydev     : Tiburan : Raydeon : Rochet2 : Nooblet :
+ECHO Members: Catacrunch : Nooblet : Nomad   : Zamara  : Sulbutx : John2308
+ECHO        : Prydev     : Tiburan : Raydeon : Rochet2 :         :
 ECHO.
 PAUSE
 CLS
@@ -75,7 +75,7 @@ SET rebworl=.\database\main_db\world_rebase\
 
 :Begin
 CLS
-SET upstat= Rev19-A
+SET upstat= No Updates
 Set lstat=Under Development
 COLOR 0b
 SET v=""
@@ -116,7 +116,7 @@ ECHO          บ                                                บ
 ECHO          บ  3. Backup World DB                            บ
 ECHO          บ  4. Backup Character DB                        บ
 ECHO          บ                                                บ
-ECHO          บ  5. Apply Updates             %upstat%         บ
+ECHO          บ  5. Apply Updates             %upstat%      บ
 ECHO          บ  6. Apply Locals            %lstat%  บ
 ECHO          บ  7. Change Settings                            บ
 ECHO          บ                                                บ
@@ -156,7 +156,7 @@ ECHO          บ                                                บ
 ECHO          บ  3. Backup REBASE WORLD DB                     บ
 ECHO          บ  4. Backup REBASE Character DB                 บ
 ECHO          บ                                                บ
-ECHO          บ  5. Apply Updates             %upstat%         บ
+ECHO          บ  5. Apply Updates             %upstat%      บ
 ECHO          บ                                                บ
 ECHO          บ  7. Change Settings                            บ
 ECHO          บ                                                บ

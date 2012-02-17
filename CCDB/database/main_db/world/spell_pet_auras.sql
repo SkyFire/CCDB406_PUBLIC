@@ -20,6 +20,7 @@ CREATE TABLE `spell_pet_auras` (
 
 LOCK TABLES `spell_pet_auras` WRITE;
 /*!40000 ALTER TABLE `spell_pet_auras` DISABLE KEYS */;
+INSERT INTO `spell_pet_auras` VALUES (34460,0,0,75447),(19578,0,0,19579),(20895,0,0,24529);
 /*!40000 ALTER TABLE `spell_pet_auras` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

@@ -1,3 +1,27 @@
+A listing of fixes applied to R23-A of CCDB_406 17/02/12
+
+The Public revision is now at the same stage as the Developer release
+so with the addition of so much content the changelog will be a
+brief listing of the huge ammount of additions.
+
+DB Rework including:
+Hundreds of SAI scripts re-wrote
+
+Thousands of:
+Game object corrections, 
+Item corrections, 
+Scripts,
+Creature corrections,
+Quest corrections.
+
+All Skyfire Updates up to "2012_02_08_11_world_misc.sql"  Have also been applied to the DB so no need to 
+use the Updater within the DB Installer.  All Skyfire updates released after "2012_02_08_11_world_misc.sql" 
+will have to be applied manually.
+
+Thanks to Sulbutx, Zamara and the SKYFIRE Team for their help towards this revision
+
+-----------------------------------------------------------------
+
 A listing of fixes applied to R19-A of CCDB_406 11/02/12 - PUBLIC
 
 Enchanting Training Fix
