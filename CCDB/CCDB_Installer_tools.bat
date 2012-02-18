@@ -5,7 +5,7 @@ SET Pbuild_ver= G5 12-13-11
 SET Sbuild_ver= 12-31-11
 SET SRbuild_ver= 02-17-12
 SET updatetime= Feb 17,2012 18:47pm
-SET dbrev= CCDB R19
+SET dbrev= CCDB R23
 SET release_ver= Official
 :TOP
 
